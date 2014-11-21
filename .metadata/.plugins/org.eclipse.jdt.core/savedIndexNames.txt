@@ -1,0 +1,4 @@
+INDEX VERSION 1.126+C:\Users\Merijn\Documents\GitHub\Smart-Mobile\.metadata\.plugins\org.eclipse.jdt.core
+42102691.index
+3308300647.index
+158008934.index
