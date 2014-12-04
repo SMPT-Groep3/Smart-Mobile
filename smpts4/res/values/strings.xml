@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Papple</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main_menu">MainMenu</string>
+    <string name="title_activity_gallery">Gallery</string>
+    <string name="title_activity_project">Project</string>
+
+    <color name="purple">#662E91</color>
+
+    <string name="title_activity_gallery2">Gallery2</string>
+
+</resources>
