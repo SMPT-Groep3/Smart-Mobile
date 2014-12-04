@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.smpts4.MainMenu"
+    android:background="@color/purple" >
+
+    <Button
+        android:id="@+id/newproject"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:padding="0dp"
+        android:layout_weight="5"
+
+        android:background="@drawable/newproject" />
+    
+    <Button
+        android:id="@+id/loadproject"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:padding="0dp"
+        android:layout_weight="5"
+
+        android:background="@drawable/loadproject" />
+
+</LinearLayout>

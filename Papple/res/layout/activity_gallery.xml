@@ -1,0 +1,89 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.smpts4.Project"
+    tools:ignore="HardcodedText"
+    android:background="@color/purple" >
+
+    <LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="100dp" >
+	    <Button
+	        android:id="@+id/top"
+	        
+			style="@style/GridButton"
+	
+	        android:background="@drawable/top" />
+	    
+	    <Button
+	        android:id="@+id/bottom"
+	        
+			style="@style/GridButton"
+	
+	        android:background="@drawable/bottom" />
+	    
+	    <Button
+	        android:id="@+id/side"
+	        
+			style="@style/GridButton"
+	
+	        android:background="@drawable/side" />
+    </LinearLayout>
+    
+    <LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="100dp" >
+	    <Button
+	        android:id="@+id/keyboard"
+	        
+			style="@style/GridButton"
+	
+	        android:background="@drawable/keyboard" />
+	    
+	    <Button
+	        android:id="@+id/mousepad"
+	        
+	        style="@style/GridButton"
+	
+	        android:background="@drawable/mousepad" />
+	    
+	    <Button
+	        android:id="@+id/screen"
+	        
+	        style="@style/GridButton"
+	
+	        android:background="@drawable/screen" />
+    </LinearLayout>
+    
+    <LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="100dp" >
+	    <Button
+	        android:id="@+id/adapter"
+	        
+	        style="@style/GridButton"
+	
+	        android:background="@drawable/adapter" />
+	    
+	    <Button
+	        android:id="@+id/mouse"
+	        
+	        style="@style/GridButton"
+	
+	        android:background="@drawable/mouse" />
+	    
+	    <Button
+	        android:id="@+id/cable"
+	        
+	        style="@style/GridButton"
+	
+	        android:background="@drawable/cable" />
+    </LinearLayout>
+    
+
+</LinearLayout>
+<!--
+GridLayout heeft API 14 of hoger nodig, dus ik heb maar gewoon een LinearLayout gepakt zodat ik het API level lager kan houden als ik dat wil.
+-->
