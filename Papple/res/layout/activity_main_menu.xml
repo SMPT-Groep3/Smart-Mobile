@@ -2,34 +2,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/purple"
     android:orientation="vertical"
-    tools:context="com.example.smpts4.MainMenu"
-    android:background="@color/purple" >
+    tools:context="com.example.smpts4.MainMenu" >
 
     <Button
         android:id="@+id/newproject"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_marginBottom="0dp"
-        android:layout_marginTop="0dp"
         android:layout_marginLeft="0dp"
         android:layout_marginRight="0dp"
-        android:padding="0dp"
+        android:layout_marginTop="0dp"
         android:layout_weight="5"
+        android:background="@drawable/newproject"
+        android:padding="0dp" />
 
-        android:background="@drawable/newproject" />
-    
     <Button
         android:id="@+id/loadproject"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="0dp"
-        android:layout_marginTop="0dp"
         android:layout_marginLeft="0dp"
         android:layout_marginRight="0dp"
-        android:padding="0dp"
+        android:layout_marginTop="0dp"
         android:layout_weight="5"
+        android:background="@drawable/loadproject"
+        android:padding="0dp" />
 
-        android:background="@drawable/loadproject" />
+    <Button
+        android:id="@+id/btnDertien"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dertien_inch_selector" />
+
+    <Button
+        android:id="@+id/btnVijftien"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/vijftien_inch_selector" />
+
+    <Button
+        android:id="@+id/btnOpenProject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/open_project_selector" />
+
+    <Button
+        android:id="@+id/btnNewProject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/new_project_selector" />
 
 </LinearLayout>
