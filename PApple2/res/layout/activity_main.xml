@@ -1,0 +1,69 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <Button
+        android:id="@+id/buttonExportProject"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="0dp"
+        android:padding="0dp"
+        android:text="@string/exportProject"
+        android:onClick="exportProject"
+        android:background="@drawable/selector_purple" />
+
+    <Button
+        android:id="@+id/buttonImportProject"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_margin="0dp"
+        android:layout_above="@id/buttonExportProject"
+        android:padding="0dp"
+        android:text="@string/importProject" 
+        android:onClick="importProject"
+        android:background="@drawable/selector_green"/>
+
+    <Button
+        android:id="@+id/buttonShareProject"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_margin="0dp"
+        android:layout_above="@id/buttonImportProject"
+        android:padding="0dp"
+        android:text="@string/shareProject" 
+        android:onClick="shareProject"
+        android:background="@drawable/selector_red"/>
+
+    <Button
+        android:id="@+id/buttonLoadProject"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_above="@id/buttonShareProject"
+        android:padding="0dp"
+        android:text="@string/loadProject"
+        android:onClick="loadProject"
+        android:background="@drawable/selector_orange" />
+
+    <Button
+        android:id="@+id/buttonNewProject"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_above="@id/buttonLoadProject"
+        android:padding="0dp"
+        android:text="@string/newProject" 
+        android:onClick="newProject"
+        android:background="@drawable/selector_blue"/>
+
+    <ImageView 
+        android:id="@+id/imageView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:src="@drawable/apple"
+        android:contentDescription="@string/logoImage"
+        android:layout_above="@id/buttonNewProject"/>
+
+</RelativeLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PApple2</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="newProject">New Project</string>
+    <string name="loadProject">Load Project</string>
+    <string name="shareProject">Share Project</string>
+    <string name="exportProject">Export Project</string>
+    <string name="importProject">Import Project</string>
+    <string name="logoImage">Logo Image</string>
+    <string name="title_activity_new_project">NewProject</string>
+    <string name="title_activity_load_project">LoadProject</string>
+    <string name="title_activity_export_project">ExportProject</string>
+    <string name="title_activity_import_project">ImportProject</string>
+    <string name="title_activity_share_project">ShareProject</string>
+
+</resources>
