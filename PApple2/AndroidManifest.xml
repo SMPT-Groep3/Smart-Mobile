@@ -24,23 +24,43 @@
         </activity>
         <activity
             android:name=".NewProject"
-            android:label="@string/title_activity_new_project" >
+            android:label="@string/title_activity_new_project"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".LoadProject"
-            android:label="@string/title_activity_load_project" >
+            android:label="@string/title_activity_load_project"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".ExportProject"
-            android:label="@string/title_activity_export_project" >
+            android:label="@string/title_activity_export_project"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".ImportProject"
-            android:label="@string/title_activity_import_project" >
+            android:label="@string/title_activity_import_project"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".ShareProject"
-            android:label="@string/title_activity_share_project" >
+            android:label="@string/title_activity_share_project"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
     </application>
 

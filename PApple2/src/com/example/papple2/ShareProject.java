@@ -11,5 +11,6 @@ public class ShareProject extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_share_project);
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 	}
 }

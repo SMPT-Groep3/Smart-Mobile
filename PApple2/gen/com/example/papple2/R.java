@@ -38,6 +38,11 @@ public final class R {
         public static final int buttonNewProject=0x7f070004;
         public static final int buttonShareProject=0x7f070002;
         public static final int imageView=0x7f070005;
+        public static final int item=0x7f070008;
+        public static final int itemCollection=0x7f070006;
+        public static final int itemImage=0x7f07000a;
+        public static final int itemName=0x7f070009;
+        public static final int rootItem=0x7f070007;
     }
     public static final class layout {
         public static final int activity_export_project=0x7f030000;
@@ -46,6 +51,7 @@ public final class R {
         public static final int activity_main=0x7f030003;
         public static final int activity_new_project=0x7f030004;
         public static final int activity_share_project=0x7f030005;
+        public static final int row_grid=0x7f030006;
     }
     public static final class string {
         public static final int app_name=0x7f050000;

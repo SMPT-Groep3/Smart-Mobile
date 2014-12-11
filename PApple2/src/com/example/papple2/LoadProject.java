@@ -11,5 +11,6 @@ public class LoadProject extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_load_project);
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 	}
 }
