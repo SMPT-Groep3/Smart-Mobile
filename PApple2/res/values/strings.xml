@@ -14,5 +14,7 @@
     <string name="title_activity_export_project">ExportProject</string>
     <string name="title_activity_import_project">ImportProject</string>
     <string name="title_activity_share_project">ShareProject</string>
+    <string name="title_activity_edit_part">EditPart</string>
+    <string name="action_settings">Settings</string>
 
 </resources>

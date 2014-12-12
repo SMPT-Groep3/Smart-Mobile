@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootItem"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:background="#FFFFFF" >
+
+    <LinearLayout
+        android:id="@+id/project"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal" >
+
+        <TextView
+            android:id="@+id/projectName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingTop="50dp"
+            android:text="Shell" />
+
+        <ImageView
+            android:id="@+id/projectImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:contentDescription="Testdinges"
+            android:src="@drawable/ic_launcher" />
+    </LinearLayout>
+
+</RelativeLayout>
