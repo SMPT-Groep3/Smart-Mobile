@@ -62,6 +62,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+        <activity
+            android:name=".EditPart"
+            android:label="@string/title_activity_edit_part" >
+        </activity>
     </application>
 
 </manifest>
