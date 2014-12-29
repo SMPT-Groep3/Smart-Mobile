@@ -4,21 +4,12 @@
     android:layout_height="match_parent"
     tools:context="${relativePackage}.${activityClass}" >
 
-<<<<<<< HEAD
         <GridView
         android:id="@+id/projectCollection"
         android:layout_height="fill_parent"
         android:layout_width="fill_parent"
         android:layout_margin="0dp"
         android:numColumns="4"
-=======
-    <GridView
-        android:id="@+id/itemCollection"
-        android:layout_height="fill_parent"
-        android:layout_width="fill_parent"
-        android:layout_margin="0dp"
-        android:numColumns="2"
->>>>>>> FETCH_HEAD
         android:stretchMode="columnWidth" 
         android:verticalSpacing="0dp"
         android:padding="0dp"

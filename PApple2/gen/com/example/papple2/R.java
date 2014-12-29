@@ -43,21 +43,7 @@ public final class R {
         public static final int selector_red=0x7f020006;
     }
     public static final class id {
-<<<<<<< HEAD
-        public static final int buttonExportProject=0x7f070001;
-        public static final int buttonImportProject=0x7f070002;
-        public static final int buttonLoadProject=0x7f070004;
-        public static final int buttonNewProject=0x7f070005;
-        public static final int buttonShareProject=0x7f070003;
-        public static final int imageView=0x7f070006;
-        public static final int item=0x7f070009;
-        public static final int itemCollection=0x7f070007;
-        public static final int itemImage=0x7f07000b;
-        public static final int itemName=0x7f07000a;
-        public static final int projectCollection=0x7f070000;
-        public static final int rootItem=0x7f070008;
-=======
-        public static final int action_settings=0x7f090016;
+        public static final int action_settings=0x7f090017;
         public static final int button1=0x7f090006;
         public static final int button2=0x7f090007;
         public static final int button3=0x7f090002;
@@ -71,16 +57,16 @@ public final class R {
         public static final int buttonShareProject=0x7f09000b;
         public static final int expandableListView1=0x7f090005;
         public static final int imageView=0x7f09000e;
-        public static final int item=0x7f090010;
-        public static final int itemCollection=0x7f090008;
-        public static final int itemImage=0x7f090012;
-        public static final int itemName=0x7f090011;
+        public static final int item=0x7f090011;
+        public static final int itemCollection=0x7f09000f;
+        public static final int itemImage=0x7f090013;
+        public static final int itemName=0x7f090012;
         public static final int partView2D=0x7f090000;
-        public static final int project=0x7f090013;
-        public static final int projectImage=0x7f090015;
-        public static final int projectName=0x7f090014;
-        public static final int rootItem=0x7f09000f;
->>>>>>> FETCH_HEAD
+        public static final int project=0x7f090014;
+        public static final int projectCollection=0x7f090008;
+        public static final int projectImage=0x7f090016;
+        public static final int projectName=0x7f090015;
+        public static final int rootItem=0x7f090010;
     }
     public static final class layout {
         public static final int activity_edit_part=0x7f030000;
