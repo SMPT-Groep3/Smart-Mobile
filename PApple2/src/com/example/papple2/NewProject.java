@@ -3,10 +3,13 @@ package com.example.papple2;
 import java.util.List;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 
@@ -22,19 +25,19 @@ public class NewProject extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_new_project);
-		getActionBar().setDisplayHomeAsUpEnabled(true);
 		
 		itemProvider = new ItemProvider(this);
 		List<ItemPart> items = itemProvider.getItems();
 		if(items.size() == 0)
 		{
-			ItemPart item1 = new ItemPart("Cover", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.newAndroid_blue_dark));
-			ItemPart item2 = new ItemPart("Shell", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.newAndroid_red_dark));
-			ItemPart item3 = new ItemPart("Screen", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.newAndroid_orange_dark));
-			ItemPart item4 = new ItemPart("Side", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.newAndroid_orange_dark));
-			ItemPart item5 = new ItemPart("Keyboard", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.newAndroid_orange_dark));
-			ItemPart item6 = new ItemPart("Trackpad", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.newAndroid_green_dark));
-			ItemPart item7 = new ItemPart("Adapter", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.newAndroid_orange_dark));
+			ItemPart item1 = new ItemPart("Cover", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.rood), getResources().getDrawable(R.drawable.coverd));
+			ItemPart item2 = new ItemPart("Shell", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.paars), getResources().getDrawable(R.drawable.shelld));
+			ItemPart item3 = new ItemPart("Screen", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.grijs), getResources().getDrawable(R.drawable.screend));
+			ItemPart item4 = new ItemPart("Side", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.blauw), getResources().getDrawable(R.drawable.sided));
+			ItemPart item5 = new ItemPart("Keyboard", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.rood), getResources().getDrawable(R.drawable.keyboardd));
+			ItemPart item6 = new ItemPart("Trackpad", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.paars), getResources().getDrawable(R.drawable.trackpadd));
+			ItemPart item7 = new ItemPart("Adapter", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.grijs), getResources().getDrawable(R.drawable.adapterd));
+			ItemPart item8 = new ItemPart("Onderkant", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.blauw), getResources().getDrawable(R.drawable.bottomd));
 			
 			itemProvider.addItemPart(item1);
 			itemProvider.addItemPart(item2);
@@ -43,6 +46,7 @@ public class NewProject extends Activity {
 			itemProvider.addItemPart(item5);
 			itemProvider.addItemPart(item6);
 			itemProvider.addItemPart(item7);
+			itemProvider.addItemPart(item8);
 		}
 		
 		grid = (GridView) findViewById(R.id.itemCollection);
@@ -59,4 +63,42 @@ public class NewProject extends Activity {
 			}
 		});
 	}
+	
+	 @Override
+		public void onBackPressed() {
+
+			dialogClick();
+		}
+	    
+	    public void dialogClick()
+		{
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			
+			builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int id) {
+					Toast tToast = Toast.makeText(getApplication().getApplicationContext(), "Project Saved", Toast.LENGTH_SHORT);
+					tToast.show();
+					finish();
+				}
+			});
+			
+			builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int id) {
+					Toast tToast = Toast.makeText(getApplication().getApplicationContext(), "Project deleted", Toast.LENGTH_SHORT);
+					tToast.show();
+					finish();
+					
+				}
+			});
+			
+			builder.setMessage(R.string.dialog_message)
+			.setTitle(R.string.dialog_title);
+			
+			AlertDialog dialog = builder.create();
+			dialog.show();
+		}
 }

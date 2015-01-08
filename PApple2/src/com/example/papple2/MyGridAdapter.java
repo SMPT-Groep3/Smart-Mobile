@@ -50,18 +50,18 @@ public class MyGridAdapter extends BaseAdapter {
 		View v = convertView;
 		//De benodigde views
 		
-		TextView item1Name;
+		ImageView itemTitleImg;
 		ImageView item1Image;
 
 		/** Als convertview(v) null is dan worden er nieuwe tags toegevoegd */
 		if (v == null) {
 			v = inflater.inflate(R.layout.row_grid, viewGroup, false);
-			v.setTag(R.id.itemName, v.findViewById(R.id.itemName));
+			v.setTag(R.id.itemTitleImg, v.findViewById(R.id.itemTitleImg));
 			v.setTag(R.id.itemImage, v.findViewById(R.id.itemImage));
 		}
 
 		/** alle Views worden geinstantieerd */
-		item1Name = (TextView) v.getTag(R.id.itemName);
+		itemTitleImg = (ImageView) v.getTag(R.id.itemTitleImg);
 		item1Image = (ImageView) v.findViewById(R.id.itemImage);
 
 		/** card wordt opgehaald uit de CardProvider */
@@ -93,7 +93,7 @@ public class MyGridAdapter extends BaseAdapter {
 		
 		item1Image.setImageDrawable(item.getAfbeelding());
 
-		item1Name.setText(item.getNaam());
+		itemTitleImg.setImageDrawable(item.getTitleAfbeelding());
 
 		return v;
 	}

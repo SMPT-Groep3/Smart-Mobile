@@ -15,7 +15,8 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,11 +25,7 @@
         </activity>
         <activity
             android:name=".NewProject"
-            android:label="@string/title_activity_new_project"
-            android:parentActivityName=".MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+            android:label="@string/title_activity_new_project">
         </activity>
         <activity
             android:name=".LoadProject"
@@ -65,6 +62,12 @@
         <activity
             android:name=".EditPart"
             android:label="@string/title_activity_edit_part" >
+        </activity>
+        <activity
+            android:name=".SelectModelActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_select_model" 
+            android:parentActivityName=".MainActivity">
         </activity>
     </application>
 

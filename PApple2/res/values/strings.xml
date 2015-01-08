@@ -16,5 +16,8 @@
     <string name="title_activity_share_project">ShareProject</string>
     <string name="title_activity_edit_part">EditPart</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_select_model">SelectModelActivity</string>
+    <string name="dialog_message">Click OK to save your project</string>
+    <string name="dialog_title">Save Project?</string>
 
 </resources>

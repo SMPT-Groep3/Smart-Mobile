@@ -27,13 +27,13 @@ public class LoadProject extends Activity {
 		
 		List<ItemPart> projects = new ArrayList();
 		
-		ItemPart item1 = new ItemPart("Project1", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.newAndroid_blue_dark));
-		ItemPart item2 = new ItemPart("Project2", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.newAndroid_red_dark));
-		ItemPart item3 = new ItemPart("Project3", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.newAndroid_orange_dark));
-		ItemPart item4 = new ItemPart("Project4", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.newAndroid_orange_dark));
-		ItemPart item5 = new ItemPart("Project5", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.newAndroid_orange_dark));
-		ItemPart item6 = new ItemPart("Project6", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.newAndroid_green_dark));
-		ItemPart item7 = new ItemPart("Project7", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.newAndroid_orange_dark));
+		ItemPart item1 = new ItemPart("Project1", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.newAndroid_blue_dark),getResources().getDrawable(R.drawable.coverd));
+		ItemPart item2 = new ItemPart("Project2", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.newAndroid_red_dark),getResources().getDrawable(R.drawable.coverd));
+		ItemPart item3 = new ItemPart("Project3", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.newAndroid_orange_dark),getResources().getDrawable(R.drawable.coverd));
+		ItemPart item4 = new ItemPart("Project4", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.newAndroid_orange_dark),getResources().getDrawable(R.drawable.coverd));
+		ItemPart item5 = new ItemPart("Project5", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.newAndroid_orange_dark),getResources().getDrawable(R.drawable.coverd));
+		ItemPart item6 = new ItemPart("Project6", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.newAndroid_green_dark),getResources().getDrawable(R.drawable.coverd));
+		ItemPart item7 = new ItemPart("Project7", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.newAndroid_orange_dark),getResources().getDrawable(R.drawable.coverd));
 		
 		projects.add(item1);
 		projects.add(item2);

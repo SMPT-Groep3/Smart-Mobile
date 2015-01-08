@@ -11,5 +11,9 @@
     <color name="newAndroid_orange_dark">#FF8800</color>
     <color name="newAndroid_red">#FF4444</color>
     <color name="newAndroid_red_dark">#CC0000</color>
-
+    <color name="black">#000000</color>
+	<color name="rood">#d24b4b</color>
+	<color name="blauw">#33a1ba</color>
+	<color name="grijs">#25414c</color>
+	<color name="paars">#66308f</color>
 </resources>

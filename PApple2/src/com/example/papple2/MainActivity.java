@@ -19,7 +19,7 @@ public class MainActivity extends Activity {
     
     public void newProject (View view)
     {
-    	Intent intent = new Intent(this, NewProject.class);
+    	Intent intent = new Intent(this, SelectModelActivity.class);
     	startActivity(intent);
     }
     
@@ -37,19 +37,13 @@ public class MainActivity extends Activity {
     
     public void importProject (View view)
     {
-    	Intent intent = new Intent(this, ImportProject.class);
-    	startActivity(intent);
-    }
-    
-    public void exportProject (View view)
-    {
     	Bitmap afbeelding = (Bitmap) BitmapFactory.decodeResource(getResources(), R.drawable.apple);
     	Log.d("EDR", "Afmeting afbeelding w:" + afbeelding.getWidth() + " h:" + afbeelding.getHeight());
     	
     	ImageView img = (ImageView) findViewById(R.id.imageView);
     	Log.d("EDR", "Afmeting view w:" + img.getWidth() + " h:" + img.getHeight());
     	
-    	Intent intent = new Intent(this, ExportProject.class);
+    	Intent intent = new Intent(this, ImportProject.class);
     	startActivity(intent);
     }
     
