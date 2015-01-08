@@ -6,22 +6,10 @@
     tools:context="${relativePackage}.${activityClass}" >
 
     <Button
-        android:id="@+id/buttonExportProject"
-        android:layout_width="fill_parent"
-        android:layout_height="100dp"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="0dp"
-        android:padding="0dp"
-        android:text="@string/exportProject"
-        android:onClick="exportProject"
-        android:background="@drawable/selector_purple" />
-
-    <Button
-        android:id="@+id/buttonImportProject"
+        android:id="@+id/buttonImportExportProject"
         android:layout_width="fill_parent"
         android:layout_height="100dp"
         android:layout_margin="0dp"
-        android:layout_above="@id/buttonExportProject"
         android:padding="0dp"
         android:text="@string/importProject" 
         android:onClick="importProject"
@@ -60,8 +48,8 @@
 
     <ImageView 
         android:id="@+id/imageView"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="800dp"
         android:src="@drawable/apple"
         android:contentDescription="@string/logoImage"
         android:layout_above="@id/buttonNewProject"/>

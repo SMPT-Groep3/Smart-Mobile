@@ -7,7 +7,7 @@
     <string name="loadProject">Load Project</string>
     <string name="shareProject">Share Project</string>
     <string name="exportProject">Export Project</string>
-    <string name="importProject">Import Project</string>
+    <string name="importProject">Import/Export Project</string>
     <string name="logoImage">Logo Image</string>
     <string name="title_activity_new_project">NewProject</string>
     <string name="title_activity_load_project">LoadProject</string>
