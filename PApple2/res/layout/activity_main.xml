@@ -50,6 +50,7 @@
         android:src="@drawable/apple"
         android:contentDescription="@string/logoImage"
         android:background="@color/black"
-        android:layout_above="@id/buttonNewProject"/>
+        android:layout_above="@id/buttonNewProject"
+        android:scaleType="centerCrop"/>
 
 </RelativeLayout>
