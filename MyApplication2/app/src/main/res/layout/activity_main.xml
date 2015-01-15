@@ -1,0 +1,52 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context=".MainActivity" android:id="@+id/framelayoutmain">
+
+    <LinearLayout android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <Button android:id="@+id/button1"
+        android:onClick="button1clicked"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/menu01">
+    </Button>
+
+    <Button android:id="@+id/button2"
+        android:onClick="button2clicked"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/menu02">
+    </Button>
+
+    <Button android:id="@+id/button3"
+        android:onClick="button3clicked"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/menu03">
+    </Button>
+
+    <Button android:id="@+id/button4"
+        android:onClick="button4clicked"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/menu04">
+    </Button>
+
+    <Button android:id="@+id/button5"
+        android:onClick="button5clicked"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/menu05"
+        android:visibility="gone">
+    </Button>
+
+</LinearLayout>
+
+</FrameLayout>
