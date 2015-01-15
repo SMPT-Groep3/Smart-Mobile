@@ -19,5 +19,7 @@
     <string name="title_activity_select_model">SelectModelActivity</string>
     <string name="dialog_message">Click OK to save your project</string>
     <string name="dialog_title">Save Project?</string>
+    <string name="title_activity_select_laptop">SelectLaptop</string>
+    <string name="selectModel">Select model</string>
 
 </resources>

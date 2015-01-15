@@ -123,12 +123,14 @@ public final class R {
         public static final int loadProject=0x7f060003;
         public static final int logoImage=0x7f060007;
         public static final int newProject=0x7f060002;
+        public static final int selectModel=0x7f060013;
         public static final int shareProject=0x7f060004;
         public static final int title_activity_edit_part=0x7f06000d;
         public static final int title_activity_export_project=0x7f06000a;
         public static final int title_activity_import_project=0x7f06000b;
         public static final int title_activity_load_project=0x7f060009;
         public static final int title_activity_new_project=0x7f060008;
+        public static final int title_activity_select_laptop=0x7f060012;
         public static final int title_activity_select_model=0x7f06000f;
         public static final int title_activity_share_project=0x7f06000c;
     }

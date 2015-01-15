@@ -25,7 +25,7 @@
         </activity>
         <activity
             android:name=".NewProject"
-            android:label="@string/title_activity_new_project">
+            android:label="@string/title_activity_new_project" >
         </activity>
         <activity
             android:name=".LoadProject"
@@ -65,9 +65,9 @@
         </activity>
         <activity
             android:name=".SelectModelActivity"
-            android:screenOrientation="portrait"
-            android:label="@string/title_activity_select_model" 
-            android:parentActivityName=".MainActivity">
+            android:label="@string/title_activity_select_model"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" >
         </activity>
     </application>
 
