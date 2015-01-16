@@ -1,18 +1,21 @@
 package com.poc.pocresizeimg;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Toast;
 
 
 public class MainActivity extends Activity {
@@ -43,6 +46,46 @@ public class MainActivity extends Activity {
 				startActivityForResult(intent, RESULT_LOAD_IMAGE);	
 			}	
         });
+    }
+    
+    public void btnTextClick(View view)
+    {
+    	
+    	AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
+    	alertDialog.setTitle("Text");
+    	alertDialog.setMessage("Add your Text");
+    	
+    	final EditText input = new EditText(MainActivity.this);
+    	 LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+    	     LinearLayout.LayoutParams.MATCH_PARENT,
+    	     LinearLayout.LayoutParams.MATCH_PARENT);
+    	 input.setLayoutParams(lp);
+    	 alertDialog.setView(input);
+    	 
+    	 alertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+				
+    		 
+				@Override
+				public void onClick(DialogInterface dialog, int id) {
+					ItemProvider.getInstance().addItem(new Item(input.getText().toString(), getApplicationContext()));
+			    	adapter.notifyDataSetChanged();
+			    	CanvasDraw cd = (CanvasDraw)findViewById(R.id.canvasDraw1);
+					cd.invalidate();
+					cd.resetMatrix();
+				}
+			});
+			
+			alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int id) {
+					
+					
+				}
+			});
+    	
+    	alertDialog.show();
+    	
     }
     
     @Override

@@ -31,8 +31,6 @@ public class layerAdapter extends ArrayAdapter<Item> {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent)
 	{
-		
-		
 		final Item item = super.getItem(position);
 		final int positionlist = position;
 		
