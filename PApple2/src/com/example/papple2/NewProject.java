@@ -5,13 +5,14 @@ import java.util.List;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import com.example.papple2.R.color;
 
@@ -58,8 +59,12 @@ public class NewProject extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> a, View view, int position, long id)
 			{
-				//Nieuw intent om dat onderdeel te customizen
-				Log.d("EDR", "Yesh!!");
+				Intent editorIntent = new Intent(getApplicationContext(), EditorActivity.class);
+				itemProvider.getItemPart(position).getNaam();
+				String partName = itemProvider.getItemPart(position).getNaam();
+				Log.d("EDR", partName);
+				editorIntent.putExtra("part", partName);
+				startActivity(editorIntent);
 			}
 		});
 	}

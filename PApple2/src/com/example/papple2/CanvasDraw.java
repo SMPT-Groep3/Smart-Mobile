@@ -1,4 +1,4 @@
-package com.poc.pocresizeimg;
+package com.example.papple2;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -6,13 +6,11 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
-import android.view.SurfaceHolder;
-import android.view.SurfaceHolder.Callback;
 import android.view.SurfaceView;
-import android.view.View;
 
 public class CanvasDraw extends SurfaceView {
 
@@ -40,8 +38,11 @@ public class CanvasDraw extends SurfaceView {
 		mPosY = 0.00f;
 		mScaleFactor = 1.00f;
 		setWillNotDraw(false);
-		img = BitmapFactory.decodeResource(getResources(),
-				R.drawable.shelloutline);
+		// Veranderen in aan te passen onderdeel
+		if (img == null) {
+			img = BitmapFactory.decodeResource(getResources(),
+					R.drawable.shelloutline);
+		}
 
 		invalidate();
 	}
@@ -146,13 +147,20 @@ public class CanvasDraw extends SurfaceView {
 	public void onDraw(Canvas canvas) {
 		canvas.drawColor(Color.WHITE);
 
+		
+		//staat er nu achter omdat de objecten anders niet zichtbaar zijn
+		img = Bitmap.createScaledBitmap(img, canvas.getWidth(),
+				canvas.getHeight(), true);
+
+		canvas.drawBitmap(img, new Matrix(), null);
+		
 		for (LayerItem i : LayerItemProvider.getInstance().getItems()) {
 			i.Draw(canvas);
 		}
-
-		img = Bitmap.createScaledBitmap(img, canvas.getWidth(),
-				canvas.getHeight(), true);
-		canvas.drawBitmap(img, new Matrix(), null);
+//		img = Bitmap.createScaledBitmap(img, canvas.getWidth(),
+//				canvas.getHeight(), true);
+//
+//		canvas.drawBitmap(img, new Matrix(), null);
 	}
 
 	private void transformItem() {
@@ -189,6 +197,10 @@ public class CanvasDraw extends SurfaceView {
 			transformItem();
 			return true;
 		}
+	}
+
+	public void setPartImage(Bitmap partImg) {
+		img = partImg;
 	}
 
 }

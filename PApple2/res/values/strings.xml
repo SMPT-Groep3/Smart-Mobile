@@ -21,5 +21,6 @@
     <string name="dialog_title">Save Project?</string>
     <string name="title_activity_select_laptop">SelectLaptop</string>
     <string name="selectModel">Select model</string>
+    <string name="title_activity_editor">EditorActivity</string>
 
 </resources>

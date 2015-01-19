@@ -1,4 +1,4 @@
-package com.poc.pocresizeimg;
+package com.example.papple2;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.webkit.WebView.FindListener;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -33,7 +34,7 @@ public class layerAdapter extends ArrayAdapter<LayerItem> {
 	{
 		final LayerItem item = super.getItem(position);
 		final int positionlist = position;
-		
+		final ViewGroup parentView = parent;
 		View myView = convertView;
 		
 		if(myView == null) {
@@ -63,7 +64,8 @@ public class layerAdapter extends ArrayAdapter<LayerItem> {
 			public void onCheckedChanged(CompoundButton buttonView,
 					boolean isChecked) {
 				item.setVisible(isChecked);	
-				
+				CanvasDraw canvas = (CanvasDraw) parentView.findViewById(R.id.canvasDraw1);
+				canvas.invalidate();
 			}
 		});
 		

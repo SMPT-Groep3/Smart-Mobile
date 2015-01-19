@@ -1,18 +1,14 @@
-package com.poc.pocresizeimg;
+package com.example.papple2;
 
-import org.apache.http.conn.routing.RouteInfo.LayerType;
-
-import android.R.color;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.os.Build;
 import android.util.Log;
 
-public class Item {
+public class LayerItem {
 	
 	
 	private Bitmap img;
@@ -24,14 +20,14 @@ public class Item {
 	private Context context;
 	private int x = 0, y = 50;
 	
-	public Item(Bitmap img){
+	public LayerItem(Bitmap img){
 		this.img = img;
 		this.isVisible = true;
 		this.soort = 0;
 		transformatie = new Matrix();
 	}
 	
-	public Item(String text, Context context)
+	public LayerItem(String text, Context context)
 	{
 		this.context = context;
 		this.text = text;
@@ -40,7 +36,7 @@ public class Item {
 		transformatie = new Matrix();
 		paint = new Paint();
 		paint.setTextSize(160f);
-		this.img = BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_launcher);
+		this.img = BitmapFactory.decodeResource(context.getResources(), R.drawable.textlayer);
 	}
 	
 	public void setMatrix(float xPos, float yPos, float scaleFactor)
@@ -75,7 +71,15 @@ public class Item {
 		{
 			if(soort == 0)
 			{
-				c.drawBitmap(this.img, this.transformatie, null);
+				if(img != null)
+				{
+					c.drawBitmap(this.img, this.transformatie, null);
+				}
+				else
+				{
+					Log.d("EDR", "WTF");
+				}
+				
 			}
 			else if(soort == 1)
 			{

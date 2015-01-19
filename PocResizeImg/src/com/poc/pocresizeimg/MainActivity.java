@@ -67,7 +67,7 @@ public class MainActivity extends Activity {
     		 
 				@Override
 				public void onClick(DialogInterface dialog, int id) {
-					ItemProvider.getInstance().addItem(new Item(input.getText().toString(), getApplicationContext()));
+					LayerItemProvider.getInstance().addItem(new LayerItem(input.getText().toString(), getApplicationContext()));
 			    	adapter.notifyDataSetChanged();
 			    	CanvasDraw cd = (CanvasDraw)findViewById(R.id.canvasDraw1);
 					cd.invalidate();
@@ -102,7 +102,7 @@ public class MainActivity extends Activity {
     		int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
     		String picturePath = cursor.getString(columnIndex);
     		cursor.close();
-    		ItemProvider.getInstance().addItem(new Item(BitmapFactory.decodeFile(picturePath)));
+    		LayerItemProvider.getInstance().addItem(new LayerItem(BitmapFactory.decodeFile(picturePath)));
     		adapter.notifyDataSetChanged();
     		CanvasDraw cd = (CanvasDraw)findViewById(R.id.canvasDraw1);
     		cd.invalidate();
