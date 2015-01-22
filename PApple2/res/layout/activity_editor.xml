@@ -44,6 +44,13 @@
             android:layout_height="wrap_content"
             android:text="Clear"
             android:onClick="btnClearClick"/>
+        <Button 
+            android:id="@+id/button3D"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3D preview"
+            android:onClick="btn3DPreviewClick"/>
+        
     </LinearLayout>
 
 </LinearLayout>

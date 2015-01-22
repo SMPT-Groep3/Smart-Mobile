@@ -167,6 +167,12 @@ public class EditorActivity extends Activity {
 		cd.invalidate();
 		cd.resetMatrix();
 	}
+	
+	public void btn3DPreviewClick(View view)
+	{
+		Intent intent = new Intent(this, DrieDRender.class);
+		startActivity(intent);
+	}
 
 	@Override
 	public void onBackPressed() {
