@@ -66,6 +66,10 @@
             android:label="@string/title_activity_edit_part" >
         </activity>
         <activity
+            android:name=".DrieDRender"
+            android:label="@string/title_activity_3d_model" >
+        </activity>
+        <activity
             android:name=".SelectModelActivity"
             android:label="@string/title_activity_select_model"
             android:parentActivityName=".MainActivity"

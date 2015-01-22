@@ -137,6 +137,7 @@ public final class R {
         public static final int newProject=0x7f060002;
         public static final int selectModel=0x7f060013;
         public static final int shareProject=0x7f060004;
+        public static final int title_activity_3d_model=0x7f060015;
         public static final int title_activity_edit_part=0x7f06000d;
         public static final int title_activity_editor=0x7f060014;
         public static final int title_activity_export_project=0x7f06000a;
