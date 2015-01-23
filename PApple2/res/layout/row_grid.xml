@@ -12,15 +12,18 @@
             android:layout_marginTop="50dp"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
-            android:contentDescription="Testdinges"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:contentDescription="@string/itemImage"
             android:src="@drawable/ic_launcher" />
 
         <ImageView
             android:id="@+id/itemTitleImg"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
+            android:scaleType="fitXY"
             android:layout_alignParentBottom="true"
-            android:contentDescription="13inch"
+            android:contentDescription="@string/itemTitleImg"
             android:src="@drawable/dertieninchtitle" />
 
 </RelativeLayout>

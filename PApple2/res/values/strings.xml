@@ -23,5 +23,8 @@
     <string name="selectModel">Select model</string>
     <string name="title_activity_editor">EditorActivity</string>
     <string name="title_activity_3d_model">3D Preview</string>
+    <string name="itemTitleImg">Itemtitle Image</string>
+    <string name="itemImage">Item image</string>
+    
 
 </resources>

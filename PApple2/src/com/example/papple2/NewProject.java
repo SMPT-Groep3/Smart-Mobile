@@ -35,9 +35,9 @@ public class NewProject extends Activity {
 			ItemPart item2 = new ItemPart("Shell", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.paars), getResources().getDrawable(R.drawable.shelld));
 			ItemPart item3 = new ItemPart("Screen", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.grijs), getResources().getDrawable(R.drawable.screend));
 			ItemPart item4 = new ItemPart("Side", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.blauw), getResources().getDrawable(R.drawable.sided));
-			ItemPart item5 = new ItemPart("Keyboard", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.rood), getResources().getDrawable(R.drawable.keyboardd));
-			ItemPart item6 = new ItemPart("Trackpad", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.paars), getResources().getDrawable(R.drawable.trackpadd));
-			ItemPart item7 = new ItemPart("Adapter", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.grijs), getResources().getDrawable(R.drawable.adapterd));
+			ItemPart item5 = new ItemPart("Keyboard", getResources().getDrawable(R.drawable.keyboard), getResources().getColor(color.rood), getResources().getDrawable(R.drawable.keyboardd));
+			ItemPart item6 = new ItemPart("Trackpad", getResources().getDrawable(R.drawable.touchpad), getResources().getColor(color.paars), getResources().getDrawable(R.drawable.trackpadd));
+			ItemPart item7 = new ItemPart("Adapter", getResources().getDrawable(R.drawable.adapter), getResources().getColor(color.grijs), getResources().getDrawable(R.drawable.adapterd));
 			ItemPart item8 = new ItemPart("Onderkant", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.blauw), getResources().getDrawable(R.drawable.bottomd));
 			
 			itemProvider.addItemPart(item1);
