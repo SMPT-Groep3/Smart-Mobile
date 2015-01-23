@@ -146,21 +146,14 @@ public class CanvasDraw extends SurfaceView {
 	@Override
 	public void onDraw(Canvas canvas) {
 		canvas.drawColor(Color.WHITE);
-
-		
-		//staat er nu achter omdat de objecten anders niet zichtbaar zijn
-		img = Bitmap.createScaledBitmap(img, canvas.getWidth(),
-				canvas.getHeight(), true);
-
-		canvas.drawBitmap(img, new Matrix(), null);
 		
 		for (LayerItem i : LayerItemProvider.getInstance().getItems()) {
 			i.Draw(canvas);
 		}
-//		img = Bitmap.createScaledBitmap(img, canvas.getWidth(),
-//				canvas.getHeight(), true);
-//
-//		canvas.drawBitmap(img, new Matrix(), null);
+		img = Bitmap.createScaledBitmap(img, canvas.getWidth(),
+				canvas.getHeight(), true);
+
+		canvas.drawBitmap(img, new Matrix(), null);
 	}
 
 	private void transformItem() {
