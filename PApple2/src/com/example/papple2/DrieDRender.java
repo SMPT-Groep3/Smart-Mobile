@@ -141,7 +141,7 @@ public class DrieDRender extends Activity {
 				sun.setIntensity(250, 250, 250);
 
 				thing = loadModel("mpm_F21.mp3", thingScale);
-				thing.scale(0.15f);
+				thing.scale(0.10f);
         		thing.build();
 
 				world.addObject(thing);
