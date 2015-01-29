@@ -35,19 +35,11 @@ public class NewProject extends Activity {
 			ItemPart item2 = new ItemPart("Trackpad", getResources().getDrawable(R.drawable.touchpad), getResources().getColor(color.paars), getResources().getDrawable(R.drawable.trackpadd));
 			ItemPart item3 = new ItemPart("Adapter", getResources().getDrawable(R.drawable.adapter), getResources().getColor(color.grijs), getResources().getDrawable(R.drawable.adapterd));
 			ItemPart item4 = new ItemPart("Cover", getResources().getDrawable(R.drawable.shell), getResources().getColor(color.blauw), getResources().getDrawable(R.drawable.coverd));
-			ItemPart item5 = new ItemPart("Shell", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.rood), getResources().getDrawable(R.drawable.shelld));
-			ItemPart item6 = new ItemPart("Screen", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.paars), getResources().getDrawable(R.drawable.screend));
-			ItemPart item7 = new ItemPart("Side", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.grijs), getResources().getDrawable(R.drawable.sided));
-			ItemPart item8 = new ItemPart("Onderkant", getResources().getDrawable(R.drawable.ic_launcher), getResources().getColor(color.blauw), getResources().getDrawable(R.drawable.bottomd));
 			
 			itemProvider.addItemPart(item1);
 			itemProvider.addItemPart(item2);
 			itemProvider.addItemPart(item3);
 			itemProvider.addItemPart(item4);
-			itemProvider.addItemPart(item5);
-			itemProvider.addItemPart(item6);
-			itemProvider.addItemPart(item7);
-			itemProvider.addItemPart(item8);
 		}
 		
 		grid = (GridView) findViewById(R.id.itemCollection);

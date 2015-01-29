@@ -40,32 +40,21 @@
             android:layout_height="wrap_content"
             android:layout_weight="1" >
         </ListView>
-
-        <Button
-            android:id="@+id/buttonImport"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Upload" />
-
-        <Button
-            android:id="@+id/buttonText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add Text"
-            android:onClick="btnTextClick" />
         
-        <Button 
-            android:id="@+id/buttonClear"
+        <Button
+            android:id="@+id/buttonSave"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Clear"
-            android:onClick="btnClearClick"/>
-        <Button 
-            android:id="@+id/button3D"
+            android:layout_height="128dp"
+            android:contentDescription="Savebutton"
+            android:background="@drawable/saveselector"/>
+        
+        <Button
+            android:id="@+id/buttonPreview"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="3D preview"
-            android:onClick="btn3DPreviewClick"/>
+            android:layout_height="128dp"
+            android:contentDescription="PreviewButton"
+            android:onClick="previewClick"
+            android:background="@drawable/previewselector"/>
         
     </LinearLayout>
 

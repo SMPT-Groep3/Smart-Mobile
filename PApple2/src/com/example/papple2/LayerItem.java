@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Point;
+import android.graphics.Typeface;
 import android.util.Log;
 import android.view.Display;
 import android.view.WindowManager;
@@ -24,6 +25,9 @@ public class LayerItem {
 	private Context context;
 	private int color;
 	private int x = 0, y = 50;
+	private boolean isBold = false;
+	private boolean isItalic =false;
+	private boolean isUnderlined = false;
 	
 	public LayerItem(Bitmap img){
 		this.img = img;
@@ -32,16 +36,15 @@ public class LayerItem {
 		transformatie = new Matrix();
 	}
 	
-	public LayerItem(String text, Context context)
+	public LayerItem(String text, Context context, Paint paint)
 	{
+		this.paint = new Paint(paint);
 		this.context = context;
 		this.text = text;
 		this.isVisible = true;
 		this.soort = 1;
 		transformatie = new Matrix();
-		paint = new Paint();
-		paint.setTextSize(160f);
-		this.img = BitmapFactory.decodeResource(context.getResources(), R.drawable.textlayer);
+		this.img = BitmapFactory.decodeResource(context.getResources(), R.drawable.text);
 	}
 	
 	public LayerItem(int color, Context context)
@@ -56,6 +59,13 @@ public class LayerItem {
 		this.img.eraseColor(color);
 	}
 	
+	public LayerItem(int pattern, boolean isBackground, Context context) {
+		this.context = context;
+		this.soort = 2;
+		this.img = BitmapFactory.decodeResource(context.getResources(), pattern);
+		this.isVisible = true;
+	}
+
 	public void setMatrix(float xPos, float yPos, float scaleFactor)
 	{
 		transformatie.setScale(scaleFactor, scaleFactor);

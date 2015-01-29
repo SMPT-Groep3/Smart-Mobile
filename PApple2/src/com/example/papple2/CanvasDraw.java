@@ -63,8 +63,6 @@ public class CanvasDraw extends SurfaceView {
 
 	public CanvasDraw(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
-		// TODO Auto-generated constructor stub
-
 		this.setFocusable(true);
 		mScaleDetector = new ScaleGestureDetector(context, new ScaleListener());
 		mPosX = 0.00f;
