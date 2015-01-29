@@ -146,7 +146,7 @@ public class CanvasDraw extends SurfaceView {
 	@Override
 	public void onDraw(Canvas canvas) {
 		canvas.drawColor(Color.WHITE);
-		
+
 		for (LayerItem i : LayerItemProvider.getInstance().getItems()) {
 			i.Draw(canvas);
 		}

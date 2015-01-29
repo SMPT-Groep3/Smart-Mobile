@@ -39,7 +39,7 @@ public class EditorActivity extends Activity {
 	private Drawable[] menu4;
 	private ListView listViewMenu;
 	private Context context = this;
-	private CanvasDraw canvasDraw;
+	private static CanvasDraw canvasDraw;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -51,309 +51,232 @@ public class EditorActivity extends Activity {
 		String part = getIntent().getStringExtra("part");
 		Bitmap img = null;
 
-		menu0 = new Drawable[] { 
+		/**
+		 * Hoofdmenu 1. Kleuren 2. Afbeeldingen 3. Textures 4. Text 5. clear
+		 */
+
+		menu0 = new Drawable[] {
 				getResources().getDrawable(R.drawable.colorsselector),
 				getResources().getDrawable(R.drawable.imageselector),
 				getResources().getDrawable(R.drawable.textureselector),
-				getResources().getDrawable(R.drawable.textselector) };
-		menu1 = new Drawable[] { 
-				getResources().getDrawable(R.drawable.rood),
+				getResources().getDrawable(R.drawable.textselector),
+				getResources().getDrawable(R.drawable.clearselector) };
+
+		/**
+		 * Kleuren paar kleurtjes back
+		 */
+		menu1 = new Drawable[] { getResources().getDrawable(R.drawable.rood),
 				getResources().getDrawable(R.drawable.blauw),
 				getResources().getDrawable(R.drawable.donkergroen),
 				getResources().getDrawable(R.drawable.geel),
-				getResources().getDrawable(R.drawable.colorpicker) };
-		menu2 = new Drawable[] { 
+				getResources().getDrawable(R.drawable.backselector) };
+
+		/**
+		 * Afbeeldingen 1. Import 2. Last used image 1 3. Last used image 2 4.
+		 * Last used image 3 5. back
+		 */
+		menu2 = new Drawable[] {
 				getResources().getDrawable(R.drawable.importpressed),
 				getResources().getDrawable(R.drawable.importpressed),
 				getResources().getDrawable(R.drawable.importpressed),
 				getResources().getDrawable(R.drawable.importpressed),
-				getResources().getDrawable(R.drawable.colorpicker) };
-		menu3 = new Drawable[] { 
+				getResources().getDrawable(R.drawable.backselector) };
+
+		/**
+		 * Textures 1. Texture 1 2. Texture 2 3. Texture 3 4. Texture 4 5. back
+		 */
+		menu3 = new Drawable[] {
 				getResources().getDrawable(R.drawable.importpressed),
 				getResources().getDrawable(R.drawable.importpressed),
 				getResources().getDrawable(R.drawable.importpressed),
 				getResources().getDrawable(R.drawable.importpressed),
-				getResources().getDrawable(R.drawable.colorpicker) };
-		menu4 = new Drawable[] { 
-				getResources().getDrawable(R.drawable.importpressed),
-				getResources().getDrawable(R.drawable.importpressed),
-				getResources().getDrawable(R.drawable.importpressed),
-				getResources().getDrawable(R.drawable.importpressed),
-				getResources().getDrawable(R.drawable.colorpicker) };
+				getResources().getDrawable(R.drawable.backselector) };
+
+		/**
+		 * Text Select font Bold Italic (Nog een selector/pressed?) Underline
+		 * Size Tap screen, start typing Back
+		 */
+		menu4 = new Drawable[] { getResources().getDrawable(R.drawable.font),
+				getResources().getDrawable(R.drawable.boldselector),
+				getResources().getDrawable(R.drawable.italic),
+				getResources().getDrawable(R.drawable.underlineselector),
+				getResources().getDrawable(R.drawable.size),
+				getResources().getDrawable(R.drawable.screentap),
+				getResources().getDrawable(R.drawable.backselector) };
 
 		listViewMenu = (ListView) findViewById(R.id.listViewMenu);
 		menuItemProvider = new MenuItemProvider(this, menu0);
 		listViewMenu.setAdapter(menuItemProvider);
 
-//		listViewMenu
-//				.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//					@Override
-//					public void onItemClick(AdapterView<?> parent, View view,
-//							int position, long id) {
-//						if (position == 0) {
-//							switch (state) {
-//							case 0:
-//								state = 1;
-//								listViewMenu.setAdapter(new MenuItemProvider(
-//										context, menu1));
-//								break;
-//							case 1:
-//								// fl.setBackgroundColor(Color.RED);
-//								// Set background color
-//								break;
-//							case 2:
-//								// Default image 1
-//								Intent intent = new Intent(
-//										Intent.ACTION_PICK,
-//										android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-//								startActivityForResult(intent,
-//										RESULT_LOAD_IMAGE);
-//								break;
-//							case 3:
-//								// fl.setBackground(getResources().getDrawable(
-//								// R.drawable.pattern1));
-//								// Set texture (pattern1) as background
-//								break;
-//							case 4:
-//								// Select font
-//								break;
-//							case 5:
-//								// free space for something nice
-//								break;
-//							}
-//						} else if (position == 1) {
-//							switch (state) {
-//							case 0:
-//								state = 2;
-//								listViewMenu.setAdapter(new MenuItemProvider(
-//										context, menu2));
-//								break;
-//							case 1:
-//								// fl.setBackgroundColor(Color.BLUE);
-//								// Set background color
-//								break;
-//							case 2:
-//								// Default image 2
-//								Intent intent = new Intent(
-//										Intent.ACTION_PICK,
-//										android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-//								startActivityForResult(intent,
-//										RESULT_LOAD_IMAGE);
-//								break;
-//							case 3:
-//								// fl.setBackground(getResources().getDrawable(
-//								// R.drawable.pattern2));
-//								// Set texture (pattern2) as background
-//								break;
-//							case 4:
-//								// Bold italic en underline
-//								break;
-//							case 5:
-//
-//								break;
-//							}
-//						} else if (position == 2) {
-//							switch (state) {
-//							case 0:
-//								state = 3;
-//								listViewMenu.setAdapter(new MenuItemProvider(
-//										context, menu3));
-//								break;
-//							case 1:
-//								// fl.setBackgroundColor(Color.MAGENTA);
-//								// Set background color
-//								break;
-//							case 2:
-//								// Default image 2
-//								Intent intent = new Intent(
-//										Intent.ACTION_PICK,
-//										android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-//								startActivityForResult(intent,
-//										RESULT_LOAD_IMAGE);
-//								break;
-//							case 3:
-//								// fl.setBackground(getResources().getDrawable(
-//								// R.drawable.pattern2));
-//								// Set texture (pattern2) as background
-//								break;
-//							case 4:
-//								// Size
-//								break;
-//							}
-//						} else if (position == 3) {
-//							switch (state) {
-//							case 0:
-//								state = 4;
-//								listViewMenu.setAdapter(new MenuItemProvider(
-//												context, menu4));
-//								break;
-//							case 1:
-//								// fl.setBackgroundColor(Color.BLACK);
-//								// Set background color
-//								break;
-//							case 2:
-//								// Default image 3
-//								Intent intent = new Intent(
-//										Intent.ACTION_PICK,
-//										android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-//								startActivityForResult(intent,
-//										RESULT_LOAD_IMAGE);
-//								break;
-//							case 3:
-//								// fl.setBackground(getResources().getDrawable(
-//								// R.drawable.pattern2));
-//								// Set texture (pattern2) as background
-//								break;
-//							case 4:
-//								// Tap screen to start typing
-//								break;
-//							}
-//						} else if (position == 4) {
-//
-//						} else if (position == (listViewMenu.getCount() - 1)) {
-//							state = 0;
-//							listViewMenu.setAdapter(new MenuItemProvider(
-//									context, menu0));
-//						}
-//					}
-//				});
-		
-		listViewMenu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+		listViewMenu
+				.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+					@Override
+					public void onItemClick(AdapterView<?> parent, View view,
+							int position, long id) {
 
-                switch (state) {
-                    case 0:
+						switch (state) {
+						case 0:
 
-                        switch (position) {
-                            case 0:
-                                // wat er gebeurt als je in het hoofdmenu op 1e knop drukt -> colors
-                                state = 1;
-                                listViewMenu.setAdapter(new MenuItemProvider(context, menu1));
-                                break;
-                            case 1:
-                                // wat er gebeurt als je in het hoofdmenu op 2e knop drukt -> pictures
-                                state = 2;
-                                listViewMenu.setAdapter(new MenuItemProvider(context, menu2));
-                                break;
-                            case 2:
-                                // wat er gebeurt als je in het hoofdmenu op 3e knop drukt -> patterns
-                                state = 3;
-                                listViewMenu.setAdapter(new MenuItemProvider(context, menu3));
-                                break;
-                            case 3:
-                                // wat er gebeurt als je in het hoofdmenu op 4e knop drukt -> text
-                                state = 4;
-                                listViewMenu.setAdapter(new MenuItemProvider(context, menu4));
-                                break;
-                            case 4:
-                                // unused
-                                break;
-                        }
+							switch (position) {
+							case 0:
+								// wat er gebeurt als je in het hoofdmenu op 1e
+								// knop drukt -> colors
+								state = 1;
+								listViewMenu.setAdapter(new MenuItemProvider(
+										context, menu1));
+								break;
+							case 1:
+								// wat er gebeurt als je in het hoofdmenu op 2e
+								// knop drukt -> pictures
+								state = 2;
+								listViewMenu.setAdapter(new MenuItemProvider(
+										context, menu2));
+								break;
+							case 2:
+								// wat er gebeurt als je in het hoofdmenu op 3e
+								// knop drukt -> patterns
+								state = 3;
+								listViewMenu.setAdapter(new MenuItemProvider(
+										context, menu3));
+								break;
+							case 3:
+								// wat er gebeurt als je in het hoofdmenu op 4e
+								// knop drukt -> text
+								state = 4;
+								listViewMenu.setAdapter(new MenuItemProvider(
+										context, menu4));
+								break;
+							case 4:
+								// unused
+								clear();
+								break;
+							}
 
-                        break;
-                    case 1:
+							break;
+						case 1:
 
-                        switch (position) {
-                            case 0:
-                                // wat er gebeurt als je in het colors menu op 1e knop drukt
-                            	//set background
-                                break;
-                            case 1:
-                                // wat er gebeurt als je in het colors menu op 2e knop drukt
-                            	canvasDraw.setBackgroundColor(color.blauw);
-                                break;
-                            case 2:
-                                // wat er gebeurt als je in het colors menu op 3e knop drukt
-                            	canvasDraw.setBackgroundColor(color.rood);
-                                break;
-                            case 3:
-                                // wat er gebeurt als je in het colors menu op 4e knop drukt
-                            	canvasDraw.setBackgroundColor(color.geel);
-                                break;
-                            case 4:
-                                // nu nog back button
-                                state = 0;
-                                listViewMenu.setAdapter(new MenuItemProvider(context, menu0));
-                                break;
-                        }
+							switch (position) {
+							case 0:
+								// wat er gebeurt als je in het colors menu op
+								// 1e knop drukt
+								// set background
+								LayerItemProvider.getInstance().addItem(new LayerItem(color.rood, context));
+								adapter.notifyDataSetChanged();
+								canvasDraw.invalidate();
+								break;
+							case 1:
+								// wat er gebeurt als je in het colors menu op
+								// 2e knop drukt
+								drawColor(color.blauw);
+								break;
+							case 2:
+								// wat er gebeurt als je in het colors menu op
+								// 3e knop drukt
+								canvasDraw.setBackgroundColor(color.rood);
+								break;
+							case 3:
+								// wat er gebeurt als je in het colors menu op
+								// 4e knop drukt
+								canvasDraw.setBackgroundColor(color.geel);
+								break;
+							case 4:
+								// nu nog back button
+								state = 0;
+								listViewMenu.setAdapter(new MenuItemProvider(
+										context, menu0));
+								break;
+							}
 
-                        break;
-                    case 2:
+							break;
+						case 2:
 
-                        switch (position) {
-                            case 0:
-                                // wat er gebeurt als je in het pictures menu op 1e knop drukt
-                                break;
-                            case 1:
-                                // wat er gebeurt als je in het pictures menu op 2e knop drukt
-                                break;
-                            case 2:
-                                // wat er gebeurt als je in het pictures menu op 3e knop drukt
-                                break;
-                            case 3:
-                                // wat er gebeurt als je in het pictures menu op 4e knop drukt
-                                break;
-                            case 4:
-                                // nu nog back button
-                                state = 0;
-                                listViewMenu.setAdapter(new MenuItemProvider(context, menu0));
-                                break;
-                        }
+							switch (position) {
+							case 0:
+								importPicture();
+								break;
+							case 1:
+								// wat er gebeurt als je in het pictures menu op
+								// 2e knop drukt
+								break;
+							case 2:
+								// wat er gebeurt als je in het pictures menu op
+								// 3e knop drukt
+								break;
+							case 3:
+								// wat er gebeurt als je in het pictures menu op
+								// 4e knop drukt
+								break;
+							case 4:
+								// nu nog back button
+								state = 0;
+								listViewMenu.setAdapter(new MenuItemProvider(
+										context, menu0));
+								break;
+							}
 
-                        break;
-                    case 3:
+							break;
+						case 3:
 
-                        switch (position) {
-                            case 0:
-                                // wat er gebeurt als je in het patterns menu op 1e knop drukt
-                                break;
-                            case 1:
-                                // wat er gebeurt als je in het patterns menu op 2e knop drukt
-                                break;
-                            case 2:
-                                // wat er gebeurt als je in het patterns menu op 3e knop drukt
-                                break;
-                            case 3:
-                                // wat er gebeurt als je in het patterns menu op 4e knop drukt
-                                break;
-                            case 4:
-                                // nu nog back button
-                                state = 0;
-                                listViewMenu.setAdapter(new MenuItemProvider(context, menu0));
-                                break;
-                        }
+							switch (position) {
+							case 0:
+								// wat er gebeurt als je in het patterns menu op
+								// 1e knop drukt
+								break;
+							case 1:
+								// wat er gebeurt als je in het patterns menu op
+								// 2e knop drukt
+								break;
+							case 2:
+								// wat er gebeurt als je in het patterns menu op
+								// 3e knop drukt
+								break;
+							case 3:
+								// wat er gebeurt als je in het patterns menu op
+								// 4e knop drukt
+								break;
+							case 4:
+								// nu nog back button
+								state = 0;
+								listViewMenu.setAdapter(new MenuItemProvider(
+										context, menu0));
+								break;
+							}
 
-                        break;
-                    case 4:
+							break;
+						case 4:
 
-                        switch (position) {
-                            case 0:
-                                // wat er gebeurt als je in het tekst menu op 1e knop drukt
-                                break;
-                            case 1:
-                                // wat er gebeurt als je in het tekst menu op 2e knop drukt
-                                break;
-                            case 2:
-                                // wat er gebeurt als je in het tekst menu op 3e knop drukt
-                                break;
-                            case 3:
-                                // wat er gebeurt als je in het tekst menu op 4e knop drukt
-                                break;
-                            case 4:
-                                // nu nog back button
-                                state = 0;
-                                listViewMenu.setAdapter(new MenuItemProvider(context, menu0));
-                                break;
-                        }
+							switch (position) {
+							case 0:
+								// select font
+								break;
+							case 1:
+								// bold
+								break;
+							case 2:
+								// italic
+								break;
+							case 3:
+								// underline
+								break;
+							case 4:
+								// Size
+								break;
+							case 5:
+								// Tap the screen to start typing??
+								createText();
+								break;
+							case 6:
+								state = 0;
+								listViewMenu.setAdapter(new MenuItemProvider(
+										context, menu0));
+								break;
+							}
 
-                        break;
-                }
+							break;
+						}
 
-
-            }
-
-        });
+					}
+				});
 
 		if (part.equals("Cover")) {
 			img = BitmapFactory.decodeResource(getResources(),
@@ -397,15 +320,37 @@ public class EditorActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(
-						Intent.ACTION_PICK,
-						android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-				startActivityForResult(intent, RESULT_LOAD_IMAGE);
+				importPicture();
 			}
 		});
 	}
+	
+	private void drawColor(int color) {
+		if(LayerItemProvider.getInstance().hasBackgroundColor() == false)
+		{
+			LayerItemProvider.getInstance().addItem(new LayerItem(color, context));
+			adapter.notifyDataSetChanged();
+			canvasDraw.invalidate();
+		}
+		else
+		{
+			//Anders out of memory
+			Log.d("EDR", "Geen extra achtergrond");
+		}
+		
+	}
+
+	private void importPicture() {
+		Intent intent = new Intent(Intent.ACTION_PICK,
+				android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+		startActivityForResult(intent, RESULT_LOAD_IMAGE);
+	}
 
 	public void btnTextClick(View view) {
+		createText();
+	}
+
+	private void createText() {
 		AlertDialog.Builder alertDialog = new AlertDialog.Builder(
 				EditorActivity.this);
 		alertDialog.setTitle("Text");
@@ -443,7 +388,6 @@ public class EditorActivity extends Activity {
 				});
 
 		alertDialog.show();
-
 	}
 
 	@Override
@@ -471,6 +415,10 @@ public class EditorActivity extends Activity {
 	}
 
 	public void btnClearClick(View view) {
+		clear();
+	}
+
+	private void clear() {
 		LayerItemProvider.getInstance().clearItems();
 		adapter.notifyDataSetChanged();
 		CanvasDraw cd = (CanvasDraw) findViewById(R.id.canvasDraw1);
@@ -487,6 +435,11 @@ public class EditorActivity extends Activity {
 	public void onBackPressed() {
 		LayerItemProvider.getInstance().clearItems();
 		finish();
+	}
+	
+	static View getCanvas()
+	{
+		return canvasDraw;
 	}
 
 }

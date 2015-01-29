@@ -4,9 +4,13 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.Point;
 import android.util.Log;
+import android.view.Display;
+import android.view.WindowManager;
 
 public class LayerItem {
 	
@@ -18,6 +22,7 @@ public class LayerItem {
 	private String text;
 	private Paint paint;
 	private Context context;
+	private int color;
 	private int x = 0, y = 50;
 	
 	public LayerItem(Bitmap img){
@@ -37,6 +42,18 @@ public class LayerItem {
 		paint = new Paint();
 		paint.setTextSize(160f);
 		this.img = BitmapFactory.decodeResource(context.getResources(), R.drawable.textlayer);
+	}
+	
+	public LayerItem(int color, Context context)
+	{
+		this.context = context;
+		this.soort = 2;
+		this.color = color;
+		this.isVisible = true;
+		BitmapFactory.Options options = new BitmapFactory.Options();
+		options.inMutable = true;
+		this.img = BitmapFactory.decodeResource(context.getResources(), R.drawable.blauw, options);
+		this.img.eraseColor(color);
 	}
 	
 	public void setMatrix(float xPos, float yPos, float scaleFactor)
@@ -85,6 +102,16 @@ public class LayerItem {
 			{
 				c.drawText(text, x, y, paint);
 			}
+			else if(soort == 2)
+			{
+				WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+				Point size = new Point();
+				Display display = wm.getDefaultDisplay();
+				display.getSize(size);
+				img = Bitmap.createScaledBitmap(img, size.x,
+						size.y, true);
+				c.drawBitmap(img, 0, 0, null);
+			}
 			
 		}
 	}
@@ -103,5 +130,16 @@ public class LayerItem {
 	{
 		this.x = x;
 		this.y = y;
+	}
+
+	public boolean isBackgroundColor() {
+		if(soort == 2)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 }

@@ -38,13 +38,14 @@ public class MenuItemProvider extends ArrayAdapter<Drawable> {
 			myView = inflater.inflate(R.layout.menulistitem, null, false);
 		}
 		ImageView image = (ImageView) myView.findViewById(R.id.PlayerPicture);
-		Log.d("EDR", "Originele breedte: " +image.getWidth());
 		image.setImageDrawable(d);
 		image.setAdjustViewBounds(true);
 		image.requestLayout();
 		image.getLayoutParams().height = 128;
-		Log.d("EDR", "Breedte" + breedte);
-		Log.d("EDR", "Hoogte" + hoogte);
+		if(hoogte <= 80)
+		{
+			image.getLayoutParams().height = hoogte - 26;
+		}
 		return myView;
 	}
 }

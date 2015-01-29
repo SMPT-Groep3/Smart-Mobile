@@ -35,9 +35,27 @@ public class LayerItemProvider {
 	{
 		items.clear();
 	}
+
+	public boolean hasBackgroundColor() {
+		for (LayerItem item : items) {
+			if(item.isBackgroundColor())
+			{
+				return true;
+			}
+			else 
+			{
+				return false;
+			}
+		}
+		return false;
+	}
+
+	public void removeItem(int position) {
+		items.remove(position);
+	}
 	
-	
-	
-	
-	
+	public int getItemsSize()
+	{
+		return this.items.size();
+	}
 }
