@@ -12,5 +12,7 @@ public class ExportProject extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_export_project);
 		getActionBar().setDisplayHomeAsUpEnabled(true);
+		
+		setTitle("Export your laptop");
 	}
 }

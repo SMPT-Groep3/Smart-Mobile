@@ -16,6 +16,8 @@ public class SelectModelActivity extends Activity {
 		setContentView(R.layout.activity_select_model);
 		
 		getActionBar().setDisplayHomeAsUpEnabled(true);
+		
+		setTitle("Choose your laptop");
 	}
 	
     public void dertien (View view)

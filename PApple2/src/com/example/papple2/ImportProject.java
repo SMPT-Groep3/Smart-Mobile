@@ -12,5 +12,7 @@ public class ImportProject extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_import_project);
 		getActionBar().setDisplayHomeAsUpEnabled(true);
+		
+		setTitle("Import your laptop");
 	}
 }

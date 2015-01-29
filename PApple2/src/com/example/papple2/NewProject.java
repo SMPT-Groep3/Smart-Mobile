@@ -27,6 +27,8 @@ public class NewProject extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_new_project);
 		
+		setTitle("Choose your part");
+		
 		itemProvider = new ItemProvider(this);
 		List<ItemPart> items = itemProvider.getItems();
 		if(items.size() == 0)

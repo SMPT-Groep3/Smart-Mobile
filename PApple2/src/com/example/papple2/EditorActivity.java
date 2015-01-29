@@ -49,6 +49,8 @@ public class EditorActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_editor);
+		
+		setTitle("Edit your laptop");
 
 		paint = new Paint();
 		paint.setTextSize(130f);

@@ -54,6 +54,7 @@ public class DrieDRender extends Activity {
 		renderer = new MyRenderer();
 		mGLView.setRenderer(renderer);
 		setContentView(mGLView);
+		setTitle("Watch your laptop");
 	}
 
 	@Override
